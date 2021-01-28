@@ -101,7 +101,7 @@ console.log(x);
 
 
 //#8 - Greater than Y - Given value of Y, write a function that takes an array and returns the number of values that are greater than Y. For example if arr = [1, 3, 5, 7] and Y = 3, your function will return 2. (There are two values in the array greater than 3, which are 5, 7).
-function returnGreaterThanY(myArray, val) {
+function greaterThanY(myArray, val) {
     var grtrthan = 0;
     for(i = 0; i < myArray.length; i++) {
         if(myArray[i] > val) {
@@ -112,27 +112,27 @@ function returnGreaterThanY(myArray, val) {
 }
 var array = [1,2,3,4,5,6,7,8,9,10];
 var val = 4;
-var x = returnGreaterThanY(array, val);
+var x = greaterThanY(array, val);
 console.log(x);
 
 
 
 //#9 - Squares - Given an array with multiple values, write a function that replaces each value in the array with the value squared by itself. (e.g. [1,5,10,-2] will become [1,25,100,4])
-function returnArraySq(myArray) {
+function squares(myArray) {
     for(i = 0; i < myArray.length; i++) {
         myArray[i] = myArray[i] * myArray[i];
     }
     return myArray;
 }
 var array = [1,5,10,-2];
-var x = returnArraySq(array);
+var x = squares(array);
 console.log(x);
 
 
 
 
 //#10 - Negatives - Given an array with multiple values, write a function that replaces any negative numbers within the array with the value of 0. When the program is done the array should contain no negative values. (e.g. [1,5,10,-2] will become [1,5,10,0])
-function replaceArrayNeg(myArray) {
+function negatives(myArray) {
     for(i = 0; i < myArray.length; i++) {
         if(myArray[i] < 0) {
             myArray[i] = 0;
@@ -141,7 +141,7 @@ function replaceArrayNeg(myArray) {
     return myArray;
 }
 var array = [1,5,10,-2];
-var x = replaceArrayNeg(array);
+var x = negatives(array);
 console.log(x);
 
 
@@ -175,22 +175,32 @@ console.log(x);
 
 
 //#12 - Swap Values - Write a function that will swap the first and last values of any given array. The default minimum length of the array is 2. (e.g. [1,5,10,-2] will become [-2,5,10,1]).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function swapValues(myArray) {
+    if(myArray.length > 1) {
+        myArray.reverse();
+    }
+    else {
+        console.log("You need an array of at least 2 to proceed")
+        return;
+    }
+    return myArray;
+}
+var array = [1,5,10,-2];
+var x = swapValues(array);
+console.log(x);
 
 
 
 
 //#13 - Number to String - Write a function that takes an array of numbers and replaces any negative values within the array with the string 'Dojo'. For example if array = [-1,-3,2], your function will return ['Dojo','Dojo',2]
+function numberToString (myArray) {
+    for(i = 0; i < myArray.length; i++) {
+        if(myArray[i] < 0) {
+            myArray[i] = "Dojo";
+        }
+    }
+    return myArray;
+}
+var array = [-1,-3,2];
+var x = numberToString(array);
+console.log(x);
